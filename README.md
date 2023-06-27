@@ -23,11 +23,9 @@
  <li>Регрессионное</li>
 </ol>
 <br>
-Был разработан [тест план.pdf](https://github.com/stalker2rus/QA/files/11881494/default.pdf) оформлен в Confluence.  <br>
-По нему было проведено тетирование, была собрана статистика и сотавлены багрепорты Jira по найденным багам. <br>
-После был оформлен [отчёт о тестировании итогового проекта.pdf](https://github.com/stalker2rus/QA/files/11881501/default.pdf) тоже в Confluence.
-
-
+Был разработан <a href=https://github.com/stalker2rus/QA/files/11881494/default.pdf>тест план</a> оформлен в Confluence.  <br>
+По нему было проведено тетирование, с использованием разных инструментов тестировщика. Таких как Postman, quse.io, sitechco и chrome devtools. Была собрана статистика и сотавлены багрепорты Jira по найденным багам. <br>
+После был оформлен <a href="https://github.com/stalker2rus/QA/files/11881532/default.pdf">отчёт о тестировании итогового проекта</a> с заключение и рекомендациями, тоже в Confluence.
 
 
 ## Контактная данные
