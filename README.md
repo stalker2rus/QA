@@ -22,13 +22,11 @@
  <li>Smoke</li>
  <li>Регрессионное</li>
 </ol>
+<br>
+Был разработан [тест план.pdf](https://github.com/stalker2rus/QA/files/11881494/default.pdf) оформлен в Confluence.  <br>
+По нему было проведено тетирование, была собрана статистика и сотавлены багрепорты Jira по найденным багам. <br>
+После был оформлен [отчёт о тестировании итогового проекта.pdf](https://github.com/stalker2rus/QA/files/11881501/default.pdf) тоже в Confluence.
 
-Был разработан тест-план оформлен в Confluence.
-[Тест план.pdf](https://github.com/stalker2rus/QA/files/11881317/default.pdf)
-По нему было проведено тетирование, была собрана статистика и сотавлены багрепорты Jira по найденным багам. 
-
-После был оформлен отчёт о тестировании в Confluence.
-[Отчёт о тестировании итогового проекта.pdf](https://github.com/stalker2rus/QA/files/11881304/default.pdf)
 
 
 
