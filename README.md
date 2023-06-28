@@ -29,6 +29,6 @@
 
 
 ## Контактная данные
-Email: stalker2rus@gmail.com
-Telegram: t.me/stalker2rus
+Email: stalker2rus@gmail.com <br>
+Telegram: <a href=https://t.me/stalker2rus>@stalker2rus</a>
 
