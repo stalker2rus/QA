@@ -51,7 +51,7 @@
 - [Получение информации](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-get)
 - [Добавление комментария к карточке](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-actions-comments-post)
 
-Была создана Postman коллекция для 
+Была создана Postman коллекция.
 
 ## Контактная данные
 Email: stalker2rus@gmail.com <br>
