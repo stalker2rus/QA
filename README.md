@@ -26,7 +26,32 @@
 Был разработан <a href=https://github.com/stalker2rus/QA/files/11881494/default.pdf>тест план</a> оформлен в Confluence.  <br>
 По нему было проведено тетирование, с использованием разных инструментов тестировщика. Таких как Postman, quse.io, sitechco и chrome devtools. Была собрана статистика и сотавлены багрепорты Jira по найденным багам. <br>
 После был оформлен <a href="https://github.com/stalker2rus/QA/files/11881532/default.pdf">отчёт о тестировании итогового проекта</a> с заключение и рекомендациями, тоже в Confluence.
+<br>
+<br>
+<br>
+<p> Проект 2: тест веб-приложения Trello черз Api Postman</p>
+<p>Необходимо было провести тестирование модулей:<p> 
+✅ Доска. Используйте следующие методы:
 
+- [Создание](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-boards-post)
+- [Получение](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-boards-id-get)
+- [Удаление](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-boards-id-delete)
+
+✅ Списки. Используйте следующие методы:
+
+- [Создание](https://developer.atlassian.com/cloud/trello/rest/api-group-lists/#api-lists-post)
+- [Получение](https://developer.atlassian.com/cloud/trello/rest/api-group-lists/#api-lists-id-get)
+
+✅ Карточки. Используйте следующие методы:
+
+- [Создание](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post)
+- [Удаление](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-delete)
+- [Изменение названия](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-put) (поле name)
+- [Смена списка](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-put) (аналогично перетаскиванию из одной колонки в другую — поле idList)
+- [Получение информации](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-get)
+- [Добавление комментария к карточке](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-actions-comments-post)
+
+Была создана Postman коллекция для 
 
 ## Контактная данные
 Email: stalker2rus@gmail.com <br>
