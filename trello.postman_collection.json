@@ -1,0 +1,828 @@
+{
+	"info": {
+		"_postman_id": "e91d949e-a572-42ac-a761-0cd93c4fc9e9",
+		"name": "Trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26391579"
+	},
+	"item": [
+		{
+			"name": "Доски",
+			"item": [
+				{
+					"name": "1. Создать доску",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"board_id\"\r",
+									"var value = pm.response.json().id //Вместо id можно использовать другое поле  json\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							},
+							{
+								"key": "dsc",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"{{$randomCountry}}\",\r\n    \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/boards",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"boards"
+							]
+						},
+						"description": "Create a new board."
+					},
+					"response": []
+				},
+				{
+					"name": "2. Проверить создание доски",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/boards/{{board_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"boards",
+								"{{board_id}}"
+							]
+						},
+						"description": "Request a single board."
+					},
+					"response": []
+				},
+				{
+					"name": "3. Удалить созданную доску",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/boards/{{board_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"boards",
+								"{{board_id}}"
+							]
+						},
+						"description": "Delete a board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Списки",
+			"item": [
+				{
+					"name": "1. Создать список",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"list_id\"\r",
+									"var value = pm.response.json().id //Вместо id можно использовать другое поле  json\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							},
+							{
+								"key": "dsc",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"{{$randomCity}}\",\r\n    \"idBoard\":\"{{board_id}}\",\r\n    \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/list",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"list"
+							]
+						},
+						"description": "Create a new board."
+					},
+					"response": []
+				},
+				{
+					"name": "2. Проверить создание списка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/list/{{list_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"list",
+								"{{list_id}}"
+							]
+						},
+						"description": "Request a single board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Карточки",
+			"item": [
+				{
+					"name": "1. Создать карточку",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"card_id\"\r",
+									"var value = pm.response.json().id //Вместо id можно использовать другое поле  json\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							},
+							{
+								"key": "dsc",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"{{$randomStreetAddress}}\",\r\n    \"idList\":\"{{list_id}}\",\r\n    \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/cards",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"cards"
+							]
+						},
+						"description": "Create a new board."
+					},
+					"response": []
+				},
+				{
+					"name": "2. Преименовать карточку",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							},
+							{
+								"key": "dsc",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Новое имя\",\r\n    \"id\":\"{{card_id}}\",\r\n    \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/cards/{{card_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"cards",
+								"{{card_id}}"
+							]
+						},
+						"description": "Create a new board."
+					},
+					"response": []
+				},
+				{
+					"name": "3. Переместить карточку в новый список",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							},
+							{
+								"key": "dsc",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Новое имя\",\r\n    \"id\":\"{{card_id}}\",\r\n    \"token\":\"{{token}}\",\r\n    \"idList\":\"642fd36f9663c2bbf75aa9cd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/cards/{{card_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"cards",
+								"{{card_id}}"
+							]
+						},
+						"description": "Create a new board."
+					},
+					"response": []
+				},
+				{
+					"name": "4. Проверить создание карточки",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/cards/{{card_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"cards",
+								"{{card_id}}"
+							]
+						},
+						"description": "Request a single board."
+					},
+					"response": []
+				},
+				{
+					"name": "5. Добавить комментарий к карточке",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							},
+							{
+								"key": "dsc",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"{{$randomFullName}}\",\r\n    \"token\":\"{{token}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/cards/{{card_id}}/actions/comments",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"cards",
+								"{{card_id}}",
+								"actions",
+								"comments"
+							]
+						},
+						"description": "Create a new board."
+					},
+					"response": []
+				},
+				{
+					"name": "6. Удалить созданную карточку",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "type",
+									"value": "string",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/{{ver}}/cards/{{card_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"{{ver}}",
+								"cards",
+								"{{card_id}}"
+							]
+						},
+						"description": "Delete a board."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "642e6c48051a5a5ae52906dc%2FATTS0IRW9tUlvWNpcrK2fAKW5eBKtqe5IqQ5n6RD1KU5Ux9LwojhWDDpIVuPnm63ZZ7B56AFB27B",
+			"type": "string"
+		},
+		{
+			"key": "baseurl",
+			"value": "https://trello.com",
+			"type": "string"
+		},
+		{
+			"key": "ver",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "board_id",
+			"value": ""
+		},
+		{
+			"key": "dsc",
+			"value": "cc3c532421da5e3b035a45a8cb4c40da57215a81c9bb2f1e849bab3d536c96e1"
+		},
+		{
+			"key": "list_id",
+			"value": ""
+		},
+		{
+			"key": "card_id",
+			"value": ""
+		},
+		{
+			"key": "listToDo_id",
+			"value": ""
+		}
+	]
+}
