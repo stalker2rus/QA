@@ -29,7 +29,7 @@
 <br>
 <br>
 <br>
-<p> Проект 2: тест веб-приложения Trello черз Api Postman</p>
+<p> Проект 2: тест веб-приложения Trello черз RESTAPI Postman</p>
 <p>Необходимо было провести тестирование модулей:<p> 
 ✅ Доска. Используйте следующие методы:
 
@@ -51,7 +51,20 @@
 - [Получение информации](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-get)
 - [Добавление комментария к карточке](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-id-actions-comments-post)
 
-Была создана Postman <a href="https://github.com/stalker2rus/QA/blob/main/trello.postman_collection.json">коллекция</a>.
+Для этого была создана Postman <a href="https://github.com/stalker2rus/QA/blob/main/trello.postman_collection.json">коллекция</a>, которую можно запускать автоматически просто подставив "свежий" token.
+<br>
+<br>
+<br>
+<p> Проект 3: нугрузочный тест веб-сайта httpbin.org/post ипользуя Apache JMeter</p>
+
+<p>Требования к вашему нагрузочному тесту:</p>
+
+<li>параметры ``vu``, ``loop`` и ``ramp-up`` должны передаваться через командную строку</li>
+<li>отчет по НТ формируется в папку web</li><br>
+<p>для ответов от сервера применяются проверки:</p>
+   <li>статус-код == 200</li>
+    <li>в теле ответа значение поля `json.user` == 'jmeter'</li>
+ 
 
 ## Контактная данные
 Email: stalker2rus@gmail.com <br>
