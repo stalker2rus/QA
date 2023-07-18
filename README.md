@@ -25,7 +25,7 @@
 <br>
 Был разработан <a href="https://github.com/stalker2rus/QA/blob/3a70d9eb7c8381ed0340e52daaffc8fd06b2013f/%D0%A2%D0%B5%D1%81%D1%82%20%D0%BF%D0%BB%D0%B0%D0%BD.pdf")>тест план</a> оформлен в Confluence.  <br>
 По нему было проведено тетирование, с использованием разных инструментов тестировщика. Таких как Postman, quse.io, sitechco и chrome devtools. Была собрана статистика и сотавлены багрепорты Jira по найденным багам. <br>
-После был оформлен <a href="https://github.com/stalker2rus/QA/files/11881532/default.pdf">отчёт о тестировании итогового проекта</a> с заключение и рекомендациями, тоже в Confluence.
+После был оформлен <a href="https://github.com/stalker2rus/QA/blob/main/%D0%BE%D1%82%D1%87%D1%91%D1%82%20%D0%BE%20%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B8%D1%82%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0.pdf">отчёт о тестировании итогового проекта</a> с заключение и рекомендациями, тоже в Confluence.
 <br>
 <br>
 <br>
